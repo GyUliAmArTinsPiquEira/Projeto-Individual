@@ -1,0 +1,504 @@
+/*importação de fonte do google fontes com varias especuras diferentes*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+body {
+    background-color:#E3DCCD;
+    font-family: 'Poppins', sans-serif; 
+    margin: 0; 
+    background-repeat: no-repeat;
+}
+
+.container {
+    display: flex;
+    width: 80%;
+    margin: 5%; 
+    flex-direction: row;
+}
+
+/* INICIO DO HEADER */
+.header {
+    position: absolute; 
+    top: 0; 
+    width: 100%;
+    height: 75px;
+    background-color: #E3DCCD;
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    margin-left: 0%;
+    margin-right: 0%;
+    margin-top: 0px; 
+    /* box-shadow: 0 16px 32px 0 rgba(255, 255, 255, 0.489); */
+    padding: 0%;
+}
+
+.header .container {
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    width: 200px;
+}
+
+.navbar {
+    width: 700px;
+    display: flex;
+    list-style: none; 
+    justify-content: space-between;
+}
+
+.navbar li a {
+    color: #767066;
+    text-decoration: none; 
+    font-size: 18px;
+    font-weight: 600; 
+    display: flex;
+    margin-left: 15px;
+    letter-spacing: 1px;
+}
+
+.navbar li a:hover {
+    color: #b4a39b;
+    transition: 0.5s;
+}
+/* FIM DO HEADER */
+
+
+/* COMEÇO DO BANNER SOBRE O TIME*/
+.banner {
+    margin-top: 170px;
+}
+
+.line {
+    height: 2px;
+    width: 380px;
+    background-color: #767066;
+    margin-left: 265px;
+}
+
+.banner .container {
+    display: flex;
+    align-items: flex-start;
+    justify-items: flex-start;
+    justify-content:flex-start;
+}
+
+.texto-banner {
+    color:#767066;
+    width: 100%; 
+    margin-top: 20px;
+    margin-left: 100px;
+}
+
+.texto-banner p {
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: justify;
+}
+
+.texto-banner h1 {
+    font-size: 40px;
+    font-family: 'Poppins', sans-serif; 
+    letter-spacing: 2px;
+    color: #767066;
+    font-weight: bold;
+    margin-bottom: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.texto-banner h1:hover {
+    color: #b4a39b;
+    transition: 2.0s;
+}
+
+.line:hover {
+    -ms-transform: scale(1.5);
+    transform: scale(1.5);
+}
+
+.texto-banner h2 {
+    font-size: 25px;
+    font-family: 'Poppins', sans-serif; 
+    letter-spacing: 2px;
+    color: #767066;
+    font-weight: bold;
+    margin-bottom: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.texto-banner .audio audio{
+    color: #767066;
+    margin-left: 38%;
+    width: 230px;
+    border-radius: 300px;
+}
+
+audio:hover{
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+    box-shadow: 0 16px 32px 0 rgb(91, 84, 76);
+}
+/* FIM DO BANNER SOBRE O TIME*/
+
+
+/* INICIO DO BANNER DE INFORMAÇÕES SOBRE O TIME */
+.banner1{
+    width: 100%;
+    height: 3700px;
+    background-color: #767066;
+    margin-top: 150px;
+}
+
+.container1{
+    margin-top: 80px;
+}
+
+.container1 h1{
+    font-size: 40px;
+    font-family: 'Poppins', sans-serif; 
+    letter-spacing: 2px;
+    color:#E3DCCD;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2%;
+    padding: 10%;
+}
+
+.container1 .line{ /*CONQUISTAS*/
+    height: 2px;
+    width: 350px;
+    background-color:#E3DCCD;
+    margin-left: 455px;
+    margin-top: -150px;
+}
+
+.line:hover {
+    -ms-transform: scale(1.5);
+    transform: scale(1.5);
+}
+
+.container1 .lineD{ /*DERMOCRACIA CORINTHIANA*/
+    height: 2px;
+    width: 750px;
+    background-color:#E3DCCD;
+    margin-left: 250px;
+    margin-top: -150px;
+}
+
+.lineD:hover {
+    -ms-transform: scale(1.5);
+    transform: scale(1.5);
+}
+
+.container1 .lineA{ /*AÇÕES SOCIAIS*/
+    height: 2px;
+    width: 400px;
+    background-color:#E3DCCD;
+    margin-left: 428px;
+    margin-top: -150px;
+}
+
+.lineA:hover {
+    -ms-transform: scale(1.5);
+    transform: scale(1.5);
+}
+
+.container1 .lineF{ /*FIEL TORCIDA*/
+    height: 2px;
+    width: 400px;
+    background-color:#E3DCCD;
+    margin-left: 428px;
+    margin-top: -150px;
+}
+
+.lineF:hover {
+    -ms-transform: scale(1.5);
+    transform: scale(1.5);
+}
+
+.container1 .lineQ{ /*QUER SABER MAIS?*/
+    height: 2px;
+    width: 420px;
+    background-color:#E3DCCD;
+    margin-left: 428px;
+    margin-top: -150px;
+    margin-bottom: 2%;
+}
+
+.lineQ:hover {
+    -ms-transform: scale(1.5);
+    transform: scale(1.5);
+}
+
+.container1 p1 {
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: justify;
+    color: #E3DCCD;
+    margin-left: 5%;
+    margin-right: 7%;
+    margin-top: 4%;
+    width: 50%;
+    margin-bottom: 4%;
+}
+
+.container1 p2 {
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: justify;
+    color: #E3DCCD;
+    margin-left: 7%;
+    margin-right: 50%;
+    margin-top: 5%;
+}
+
+.container1 p3 {
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: justify;
+    color: #E3DCCD;
+    margin-left: 35%;
+    margin-right: 7%;
+    margin-top: -48%;
+}
+.container1 p4 {
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: justify;
+    color: #E3DCCD;
+    margin-left: 5%;
+    margin-right: 50%;
+    margin-top: 4%;
+    width: 51%;
+}
+
+.container1 p5 {
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: justify;
+    color: #E3DCCD;
+    margin-left: 42%;
+    margin-right: 7%;
+    margin-top: -59%;
+}
+
+.imagem-banner1 img{
+    width: 450px;
+    margin-top: -37%;
+    margin-bottom: 50px;
+    align-items: center;
+    margin-right: 5%;
+    display: flex;
+    border-radius: 5px;
+    flex-direction: row;
+    margin-left: 60%;
+    opacity: 0.7;
+    border: 8px solid #E3DCCD;
+}
+
+.imagem-banner1 img:hover{
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+.imagem-banner2 img{
+    width: 300px;
+    margin-top: 5%;
+    margin-bottom: 50px;
+    align-items: center;
+    margin-right: 60%;
+    display: flex;
+    border-radius: 5px;
+    flex-direction: row;
+    margin-left: 5%;
+    opacity: 0.7;
+    border: 8px solid #E3DCCD;
+}
+.imagem-banner2 img:hover{
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+.imagem-banner3 img{
+    width: 390px;
+    height: 460px;
+    margin-top: -38%;
+    margin-bottom: 50px;
+    align-items: center;
+    margin-left: 61%;
+    display: flex;
+    border-radius: 5px;
+    flex-direction: row;
+    margin-right: 7%;
+    opacity: 0.7;
+    border: 8px solid #E3DCCD;
+}
+
+.imagem-banner3 img:hover{
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+.imagem-banner4 img{
+    width: 400px;
+    margin-top: 5%;
+    margin-bottom: 50px;
+    align-items: center;
+    margin-right: 60%;
+    display: flex;
+    border-radius: 5px;
+    flex-direction: row;
+    margin-left: 5%;
+    opacity: 0.7;
+    height: 300px;
+    border: 8px solid #E3DCCD;
+}
+
+.imagem-banner4 img:hover{
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+.card { /*MARQUEE*/
+    background-color: #E3DCCD;
+    width: 465px;
+    border-radius: 5px;
+    height: 40px;
+    margin-left: 60%;
+}
+
+.card h2{
+    color: #767066;
+    margin: 0%;
+    position: absolute;
+}
+
+.botao{
+    background-color: #E3DCCD;
+    color: #767066;
+    width: 20%;
+    height: 50px;
+    border-style: none; /*tira a estilização automatica do botão do html*/
+    border-radius: 10px;
+    cursor: pointer; /*muda a imagem do cursor quando passar pelo botão*/
+    font-size: 20px;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    display:flex;
+    margin: 5px 10% 0px 40%; /*borda da imagem (top right bottom left)*/
+    align-items: center;
+    justify-content: center;
+}
+
+.botao a{ 
+    color: #767066;
+    text-decoration: none;
+    font-weight: normal;
+}
+
+button:hover{
+    /*'animação' do botão quando o mouse passar*/
+    box-shadow: 0 16px 32px 0 rgba(0,0,0,0.2);
+    background-color: #bbb5aa;
+    color: white;
+    transition-duration: 0.3s; /*duração da transição da animação*/
+}
+
+/* FIM DO BANNER DE INFORMAÇÕES SOBRE O TIME */
+
+
+/* RODAPE */
+.banner6 {
+    background-color: #E3DCCD;
+    width: 100%;
+    display: flex;
+    margin:  0px 0px 0px 0px;
+    height: 380px;
+    margin-top: 0%;
+    background-repeat: no-repeat;
+    margin-right: 200px;
+    font-family: 'Poppins', sans-serif; 
+}
+
+.banner6 .texto-banner6 h1{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5px;
+    margin-left: 100px;
+    color:#767066;
+    font-family: 'Poppins', sans-serif; 
+    font-weight: bold;
+    letter-spacing: 2px;
+    font-size: 25px;
+}
+
+.banner6 .texto-banner6 h5{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+    margin-left: 100px;
+    color:#767066;
+    font-family: 'Poppins', sans-serif; 
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 0%;
+    font-weight:initial;
+    font-size: 17px;
+}
+
+
+.banner6 .texto-banner6 p{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+    margin-left: 100px;
+    color:#767066;
+    font-size: 25px;
+    font-family: 'Poppins', sans-serif; 
+    margin-bottom: 0%;
+    text-transform: uppercase;
+}
+
+.icons{
+    margin-top: 5px;
+    margin-left: 380px;
+}
+.icons img {
+    /*configuração das imagens de contato do Fale Conosco*/
+    width: 50px;
+    height: 50px;
+    margin-top: 50px;
+    margin-right: 60px;
+}
+
+
+

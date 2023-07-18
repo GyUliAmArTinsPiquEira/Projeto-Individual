@@ -1,0 +1,460 @@
+/*importação de fonte do google fontes com varias especuras diferentes*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+body {
+    background-color:#E3DCCD;
+    font-family: 'Poppins', sans-serif; 
+    margin: 0; 
+    background-repeat: no-repeat;
+}
+
+.container {
+    display: flex;
+    width: 80%;
+    margin: 5%; 
+    flex-direction: row;
+}
+
+/* INICIO DO HEADER */
+.header {
+    position: absolute; 
+    top: 0; 
+    width: 100%;
+    height: 75px;
+    background-color: #E3DCCD;
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    margin-left: 0%;
+    margin-right: 0%;
+    margin-top: 0px; 
+    padding: 0%;
+}
+
+.header .container {
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    width: 200px;
+}
+
+.navbar {
+    width: 700px;
+    display: flex;
+    list-style: none; 
+    justify-content: space-between;
+}
+
+.navbar li a {
+    color: #767066;
+    text-decoration: none; 
+    font-size: 18px;
+    font-weight: 600; 
+    display: flex;
+    margin-left: 15px;
+    letter-spacing: 1px;
+}
+
+.navbar li a:hover {
+    color: #b4a39b;
+    transition: 0.5s;
+}
+
+/* Imagem que representa o logout */
+.logout {
+    border-style: none; 
+    border-radius: 10px;
+    cursor: pointer; 
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2% 5%;
+}
+/* FIM DO HEADER */
+
+
+
+/* BANNER REGRAS DO QUIZ */
+.banner {
+    margin-top: 170px;
+    margin-bottom: 0%;
+}
+
+.line {
+    height: 2px;
+    width: 880px;
+    background-color: #767066;
+    margin-left: 20px;
+}
+
+.banner .container {
+    display: flex;
+    align-items: flex-start;
+    justify-items: flex-start;
+    justify-content:flex-start;
+    height: 480px;
+}
+
+.container1 h1:hover {
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+.texto-banner {
+    color:#767066;
+    width: 100%; 
+    margin-top: 20px;
+    margin-left: 100px;
+}
+
+.texto-banner p {
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: justify;
+    margin-bottom: 0%;
+}
+
+.texto-banner h1 {
+    font-size: 40px;
+    font-family: 'Poppins', sans-serif; 
+    letter-spacing: 2px;
+    color: #767066;
+    font-weight: bold;
+    margin-bottom: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.texto-banner h1:hover {
+    color: #b4a39b;
+    transition: 2.0s;
+}
+
+.line:hover {
+    -ms-transform: scale(1.5);
+    transform: scale(1.5);
+}
+
+.texto-banner h2 {
+    font-size: 25px;
+    font-family: 'Poppins', sans-serif; 
+    letter-spacing: 2px;
+    color: #767066;
+    font-weight: bold;
+    margin-bottom: 2px;
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    text-align: start;
+    margin-left: 0%;
+}
+/* FIM DO BANNER REGRAS DO QUIZ */
+
+
+
+/* BANNER PERGUNTAS E RESPOSTAS QUIZ */
+.banner1{
+    width: 100%;
+    height: 930px;
+    background-color: #767066;
+    background-image: url(../../assets/imgs/fundo\(3\).jpeg);
+    margin-top: 10px;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-color: #767066;   
+}
+
+.container1{
+    margin-top: 20%;
+    margin-bottom: 5%;
+}
+
+.container1 h2{
+    font-family: 'Poppins', sans-serif; 
+    color:#E3DCCD;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0%;
+    padding: 5%;
+    margin-left: -5%;
+}
+
+.perguntas{ /* Perguntas */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #E3DCCD;
+    width: 75%;
+    margin-left: 5%;
+    text-align: center;
+    margin-top: 2%;
+}
+
+.mensagem{  /* Mensagem de Acertos Acumulados  */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5%;
+    color: #E3DCCD;
+    width: 90%;
+    margin-left: 5%;
+    text-align: center;
+    font-size: 20px;
+    font-style:italic;
+    font-weight: 200;
+}
+
+.titulo{ /* Suas respostas */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2%;
+    color: #E3DCCD;
+    width: 90%;
+    margin-left: 5%;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.lista1{ /* Gabarito de acertos e erros */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1%;
+    color: #E3DCCD;
+    width: 90%;
+    margin-left: 5%;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 200;
+}
+
+.lista2{ /* Acertos e porcentagem */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1%;
+    color: #E3DCCD;
+    width: 90%;
+    margin-left: 5%;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 100;
+}
+
+.lista3{ /* Status */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1%;
+    color: #E3DCCD;
+    width: 90%;
+    margin-left: 5%;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.respotas{ /* Espaço do select das respostas */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.select{ /* Select das respostas */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 34%;
+    background-color: #E3DCCD;
+    height: 50px;
+    width: 400px;
+    border-radius: 20px;
+    text-align: center;
+    border-color:  #767066;
+    border-width: 2px;
+    border-style: dotted;
+    cursor: pointer;
+    color: #767066;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.botoes{ /* Classe dos botões de Verificar e Passar para o próximo (dentro dos vetores) */
+    display: flex;
+    align-items: center;
+    justify-content:space-evenly;
+    position: static;
+}
+
+.botaoProxima{
+    background-color: #E3DCCD;
+    color: #767066;
+    width: 20%;
+    height: 50px;
+    border-style: none; /*tira a estilização automatica do botão do html*/
+    border-radius: 10px;
+    cursor: pointer; /*muda a imagem do cursor quando passar pelo botão*/
+    font-size: 20px;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    display:inline-block;
+    margin-top: 5%;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.botaoVerificar{
+    background-color: #E3DCCD;
+    color: #767066;
+    width: 20%;
+    height: 50px;
+    border-style: none; /*tira a estilização automatica do botão do html*/
+    border-radius: 10px;
+    cursor: pointer; /*muda a imagem do cursor quando passar pelo botão*/
+    font-size: 20px;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    display:inline-block;
+    margin-top: 5%;
+    align-items: center;
+    justify-content: center;
+}
+
+button:hover{
+    /*'animação' do botão quando o mouse passar*/
+    box-shadow: 0 16px 32px 0 rgba(0,0,0,0.2);
+    background-color: #bbb5aa;
+    color: white;
+    transition-duration: 0.3s; /*duração da transição da animação*/
+}
+
+.input_numberAcertosErros{ /* Input de acertos e erros */
+    width: 100px;
+    font-family: 'Poppins', sans-serif;
+    height: 30px;
+    border-style: none;
+    background-color: #E3DCCD;
+    border-radius: 300px;
+    display: inline;
+    align-items: center;
+    justify-content: space-around;
+    color: #767066;
+    margin-top: 1%;
+    text-align: center;
+    margin-right: -42%;
+    margin-left: 42%;
+    padding: 0%;
+} 
+
+.inputsAcertosErros{ /* Classe/container que engloba as inputs de acertos e erros */
+    display: inline;
+    align-items:center;
+    justify-content:space-around;
+    justify-items: center;
+}
+
+
+.botaoValidarEnviar{ /* Estilização do botão de validação dos acertos e erros E do botão de enviar o resultado para o banco */
+    background-color: #E3DCCD;
+    color: #767066;
+    width: 200px;
+    height: 50px;
+    border-style: none; 
+    border-radius: 16px;
+    cursor: pointer; 
+    font-size: 20px;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    display:flex;
+    margin-top: 2%;
+    align-items: center;
+    justify-content: center;
+    margin-left: 42%;
+    font-size: 15px;  
+}
+/* FIM BANNER PERGUNTAS E RESPOSTAS QUIZ */
+
+/* RODAPE */
+.banner6 {
+    background-color: #E3DCCD;
+    width: 100%;
+    display: flex;
+    margin:  0px 0px 0px 0px;
+    height: 380px;
+    margin-top: 0%;
+    background-repeat: no-repeat;
+    margin-right: 200px;
+    font-family: 'Poppins', sans-serif; 
+}
+
+.banner6 .texto-banner6 h1{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5px;
+    margin-left: 150px;
+    color:#767066;
+    font-family: 'Poppins', sans-serif; 
+    font-weight: bold;
+    letter-spacing: 2px;
+    font-size: 25px;
+}
+
+.banner6 .texto-banner6 h5{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+    margin-left: 155px;
+    color:#767066;
+    font-family: 'Poppins', sans-serif; 
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 0%;
+    font-weight:initial;
+    font-size: 17px;
+}
+
+
+.banner6 .texto-banner6 p{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+    margin-left: 150px;
+    color:#767066;
+    font-size: 25px;
+    font-family: 'Poppins', sans-serif; 
+    margin-bottom: 0%;
+    text-transform: uppercase;
+}
+
+.icons{
+    margin-top: 5px;
+    margin-left: 380px;
+}
+
+.icons img {
+    /*configuração das imagens de contato do Fale Conosco*/
+    width: 50px;
+    height: 50px;
+    margin-top: 50px;
+    margin-right: 60px;
+}

@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FIEL ON | Dashboards</title>
+
+    <link rel="stylesheet" href="../dashboard/cssDash/dashboards.css">
+    <script src="../js/funcoes.js"></script>
+
+    <link rel="shortcut icon" href="../assets/imgs/logo-cor-tela (2).png">
+
+    <!-- scripts do Chart.js - 2022-1 -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!--FONT AWESOME-->
+    <script src="https://kit.fontawesome.com/9f7414eb10.js" crossorigin="anonymous"></script>
+</head>
+
+<body style="display: flex;"
+    onload="obterDadosGrafico1(sessionStorage.ID_USUARIO); obterDadosGrafico(sessionStorage.ID_USUARIO);">
+
+    <div class="janela">
+        <div class="header-left">
+            <img class="logo" src="../assets/imgs/logo-dash.png">
+
+            <div class="hello">
+                <h3>Usuário: <span id="b_usuario">usuário</span>.</h3>
+            </div>
+
+            <div class="botoesLaterais">
+                <a href="../dashboard/paginaInicial.html">
+                    <h3>Início</h3>
+                </a>
+            </div>
+
+            <div class="botoesLaterais">
+                <a href="../dashboard/quiz.html">
+                    <h3>Quiz</h3>
+                </a>
+            </div>
+
+            <div class="botoesLaterais">
+                <a href="../dashboard/lista.html">
+                    <h3>Lineup Game</h3>
+                </a>
+            </div>
+
+            <div class="botoesLaterais">
+                <a href="../dashboard/avaliacao.html">
+                    <h3>Avaliação</h3>
+                </a>
+            </div>
+          
+            <div class="btn-logout" onclick="limparSessao()">
+                <img class="sair" src="../assets/imgs/sair (1).png">
+            </div>
+
+        </div>
+    </div>
+
+
+
+    <div class="graficos">
+        <section class="graph">
+            <!-- COMEÇO DA PRIMEIRA LINHA DO DASH -->
+            <h1> SEUS RESULTADOS </h1>
+
+            <div class="titulos">
+            <div class="title_sub1">
+                <h3> ÚLTIMA TENTATIVA </h3>
+            </div>
+            <div class="title_sub2">
+                <h3> TODAS AS TENTATIVAS</h3>
+            </div>
+            </div>
+
+            <div class="linhaMaior">
+            <div class="linha1">
+                <canvas id="myChart1"></canvas>
+            </div>
+
+            <div class="linha2">
+                <canvas id="myChart2"></canvas>
+            </div>
+            </div>
+            <!-- FIM DA PRIMEIRA LINHA DO DASH -->
+
+            <h1> RECORDES HISTÓRICOS DO CORINTHIANS </h1>
+
+            <!-- COMEÇO DA SEGUNDA LINHA DO DASH -->
+            <div class="title_sub3">
+                <h3> TREINADORES COM MAIS JOGOS</h3>
+            </div>
+            <div class="linha3">
+                <canvas id="myChart3"></canvas>
+            </div>
+            <!-- FIM DA SEGUNDA LINHA DO DASH -->
+
+            <!-- COMEÇO DA TERCEIRA LINHA DO DASH -->
+            <div class="title_sub3">
+                <h3> JOGADORES QUE MAIS ATUARAM COM A CAMISA</h3>
+            </div>
+            <div class="linha4">
+                <canvas id="myChart4"></canvas>
+            </div>
+            <!-- FIM DA TERCEIRA LINHA DO DASH -->
+
+            <!-- COMEÇO DA QUARTA LINHA DO DASH -->
+            <div class="title_sub3">
+                <h3> JOGADORES COM MAIS GOLS</h3>
+            </div>
+            <div class="linha5">
+                <canvas id="myChart5"></canvas>
+            </div>
+            <!-- FIM DA QUARTA LINHA DO DASH -->
+
+            <!-- COMEÇO DA QUINTA LINHA DO DASH -->
+            <div class="title_sub3">
+                <h3> OS MAIORES GARÇONS DO CORINTHIANS</h3>
+            </div>
+            <div class="linha6">
+                <canvas id="myChart6"></canvas>
+            </div>
+            <!-- FIM DA QUINTA LINHA DO DASH -->
+
+            <!-- COMEÇO DA SEXTA LINHA DO DASH -->
+            <div class="title_sub3">
+                <h3> OS MAIORES CAMPEÕES PELO CORINTHIANS</h3>
+            </div>
+            <div class="linha7">
+                <canvas id="myChart7"></canvas>
+            </div>
+            <!-- FIM DA SEXTA LINHA DO DASH -->
+
+        </section>
+    </div>
+
+
+
+</body>
+
+<script>
+    b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+
+    var idUsuario = sessionStorage.ID_USUARIO;
+
+//------------------------------------------------------------------------------------------------------------------
+// GRÁFICO DE LINHA - TODAS AS TENTATIVAS DO USUÁRIO
+
+    function obterDadosGraficos(idUsuario) {
+        obterDadosGrafico(1)
+        obterDadosGrafico(2)
+        // //     obterDadosGrafico(3)
+        // //     obterDadosGrafico(4)
+    }
+
+    function obterDadosGrafico(idUsuario) {
+
+        fetch(`/medidas/ultimas/${idUsuario}`, { cache: 'no-store' }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (resposta) {
+
+                    resposta.reverse();
+
+                    plotarGrafico(resposta, idUsuario);
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+            }
+        })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            });
+    }
+
+    // Esta função *plotarGrafico* usa os dados capturados na função anterior para criar o gráfico
+    // Configura o gráfico (cores, tipo, etc), materializa-o na página e, 
+    // A função *plotarGrafico* também invoca a função *atualizarGrafico*
+    function plotarGrafico(resposta, idUsuario) {
+        var acertos = []
+        var erros = []
+        let labels = [];
+        for (var contador = 0; contador < resposta.length; contador++) {
+            acertos.push(resposta[contador].Acertos)
+            erros.push(resposta[contador].Erros)
+            labels.push("T " + (contador + 1))
+        }
+
+        // Criando estrutura para plotar gráfico - labels
+
+        // Criando estrutura para plotar gráfico - dados
+        let dados = {
+            labels: labels,
+            datasets: [{
+                label: 'Acertos',
+                data: acertos,
+                fill: false,
+                backgroundColor: ['rgb(169, 209, 214)'],
+                borderWidth: 3,
+                borderColor: ['rgb(169, 209, 214)'],
+                barThickness: 20,
+                tension: 0.1,
+                borderRadius: 10
+                // barPercentage: .9
+
+            },
+            {
+                label: 'Erros',
+                data: erros,
+                fill: false,
+                backgroundColor: ['rgb(222, 172, 161)'],
+                borderColor: ['rgb(222, 172, 161)'],
+                borderWidth: 3,
+                barThickness: 20,
+                tension: 0.1,
+                borderRadius: 10
+            }]
+       
+        };
+
+        // Inserindo valores recebidos em estrutura para plotar o gráfico
+        for (i = 0; i < resposta.length; i++) {
+            var registro = resposta[i];
+            labels.push(registro.idUsuario);
+            dados.datasets[0].data.push(registro.Acertos);
+            dados.datasets[1].data.push(registro.Erros);
+        }
+
+        // Criando estrutura para plotar gráfico - config
+        const config = {
+            type: 'bar',
+            data: dados,
+
+        };
+
+        // Adicionando gráfico criado em div na tela
+        let myChart2 = new Chart(
+            document.getElementById(`myChart2`),
+            config
+        );
+
+    }
+
+// --------------------------------------------------------------------------------------------------------------
+// GRÁFICO DE PIZZA - ÚLTIMA TENTATIVA DO USUÁRIO
+
+    function obterDadosGraficos1(idUsuario) {
+        obterDadosGrafico1(1)
+        obterDadosGrafico1(2)
+        // //     obterDadosGrafico(3)
+        // //     obterDadosGrafico(4)
+    }
+
+    function obterDadosGrafico1(idUsuario) {
+
+        // alterarTitulo(idAquario)
+
+        // if (proximaAtualizacao != undefined) {
+        //     clearTimeout(proximaAtualizacao);
+        // }
+
+        fetch(`/medidas/ultimas/${idUsuario}`, { cache: 'no-store' }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (resposta) {
+                    resposta.reverse();
+
+                    plotarGrafico1(resposta, idUsuario);
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+            }
+        })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            });
+    }
+
+    // Esta função *plotarGrafico* usa os dados capturados na função anterior para criar o gráfico
+    // Configura o gráfico (cores, tipo, etc), materializa-o na página e, 
+    // A função *plotarGrafico* também invoca a função *atualizarGrafico*
+    function plotarGrafico1(resposta, idUsuario) {
+
+        console.log("RESPOSTA", resposta)
+
+        var ultimaMedida = resposta.pop();
+
+        let dados1 = {
+            labels: ["Acertos", "Erros"],
+            datasets: [{
+                data: [ultimaMedida.Acertos, ultimaMedida.Erros],
+                fill: false,
+                backgroundColor: ['rgb(169, 209, 214)', 'rgb(222, 172, 161)'],
+                borderWidth: 3,
+                borderColor: ['rgb(169, 209, 214)', 'rgb(222, 172, 161)'],
+                tension: 0.1
+
+            }]
+        };
+
+        const config = {
+            type: 'pie',
+            data: dados1,
+        };
+
+        let myChart1 = new Chart(
+            document.getElementById(`myChart1`),
+            config
+        );
+
+    };
+
+// ---------------------------------------------------------------------------------------------------------------------------------------------------
+// TREINADORES COM MAIS JOGOS
+const ctx2 = document.getElementById('myChart3');
+const chartGrafico2 = new Chart(ctx2, {
+        type: 'bar',
+        data: {
+            labels: ['Oswaldo B.', 'Tite', 'Mano M.', 'Amilcar B.', 'Rato', 'Nelsinho B.', 'Fabio C.', 'Del D.', 'Jorge V.', 'Luxemburgo'],
+            datasets: [
+                {
+                    label: 'Jogos',
+                    data: [435, 378, 248, 239, 227, 192, 183, 178, 146, 134],
+                    borderColor: 'rgb(255, 250, 129)',
+                    backgroundColor: 'rgb(255, 250, 129)',
+                    borderWidth: 0,
+                    borderRadius: 10,
+                    hoverBackgroundColor: 'rgb(255, 237, 81)',
+                    barPercentage: .9,
+                    categoryPercentage: .9
+
+                },
+
+
+            ],
+        },
+
+        options: {
+            indexAxis: 'y',
+        }
+    });
+
+// JOGADORES QUE MAIS ATUARAM COM A CAMISA 
+const ctx3 = document.getElementById('myChart4');
+const chartGrafico3 = new Chart(ctx3, {
+        type: 'bar',
+        data: {
+            labels: ['Wladimir', 'Cássio', 'Luizinho', 'Ronaldo', 'Zé Maria', 'Biro-Biro', 'Vaguinho', 'Cláudio', 'Olavo', 'Fagner'],
+            datasets: [
+                {
+                    label: 'Jogos',
+                    data: [806, 645, 607, 602, 598, 590, 551, 550, 507, 495],
+                    borderColor: 'rgb(181, 225, 174)',
+                    backgroundColor: 'rgb(181, 225, 174)',
+                    borderWidth: 0,
+                    borderRadius: 10,
+                    hoverBackgroundColor: 'rgb(145, 210, 144)',
+                    barPercentage: .9,
+                    categoryPercentage: .9
+
+                },
+
+
+            ],
+        },
+
+        options: {
+            indexAxis: 'y',
+        }
+    });
+
+// JOGADORES COM MAIS GOLS
+const ctx4 = document.getElementById('myChart5');
+const chartGrafico4 = new Chart(ctx4, {
+        type: 'bar',
+        data: {
+            labels: ['Cláudio', 'Baltazar', 'Teleco', 'Neco', 'Marcelinho', 'Servillio', 'Luizinho', 'Flavio', 'Sócrates', 'Paulo', 'Rivelino'],
+            datasets: [
+                {
+                    label: 'Jogos',
+                    data: [305, 270, 257, 242, 206, 200, 175, 172, 172, 146, 144],
+                    borderColor: 'rgb(193, 179, 215)',
+                    backgroundColor: 'rgb(193, 179, 215)',
+                    borderWidth: 0,
+                    borderRadius: 10,
+                    hoverBackgroundColor: 'rgb(165, 137, 193)',
+                    barPercentage: .9,
+                    categoryPercentage: .9
+
+                },
+
+
+            ],
+        },
+
+        options: {
+            indexAxis: 'y',
+        }
+    });
+
+// OS MAIORES GARÇONS DO CORINTHIANS 
+const ctx5 = document.getElementById('myChart6');
+const chartGrafico5 = new Chart(ctx5, {
+        type: 'bar',
+        data: {
+            labels: ['Cláudio', 'Marcelinho C.', 'Luizinho', 'Rivellino', 'Vaguinho', 'Baltazar', 'Fagner', 'Jadson', 'Sócrates', 'Ricardinho'],
+            datasets: [
+                {
+                    label: 'Jogos',
+                    data: [191, 187, 166, 120, 104, 88, 65, 64, 59, 57],
+                    borderColor: 'rgb(252, 202, 162)',
+                    backgroundColor: 'rgb(252, 202, 162)',
+                    borderWidth: 0,
+                    borderRadius: 10,
+                    hoverBackgroundColor: 'rgb(252, 169, 133)',
+                    barPercentage: .9,
+                    categoryPercentage: .9
+
+                },
+
+
+            ],
+        },
+
+        options: {
+            indexAxis: 'y',
+        }
+    });
+
+// OS MAIORES CAMPEÕES PELO CORINTHIANS
+const ctx6 = document.getElementById('myChart7');
+const chartGrafico6 = new Chart(ctx6, {
+    type: 'bar',
+        data: {
+            labels: ['Del Debbio', 'Cassio', 'Rato', 'Ralf', 'Danilo', 'Alessandro', 'Chicão', 'Marcelinho'],
+            datasets: [
+                {
+                    label: 'Jogos',
+                    data: [11, 9, 9, 8, 8, 8, 8, 8],
+                    borderColor: 'rgb(134, 207, 190)',
+                    backgroundColor: 'rgb(134, 207, 190)',
+                    borderWidth: 0,
+                    borderRadius: 10,
+                    hoverBackgroundColor: 'rgb(72, 181, 163)',
+                    barPercentage: .9,
+                    categoryPercentage: .9
+                },
+
+
+            ],
+        },
+
+        options: {
+            indexAxis: 'y',
+        }
+    });
+
+</script>

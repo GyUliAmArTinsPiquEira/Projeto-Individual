@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Notable&display=swap');
+
+body {
+    background-color: #E3DCCD;
+    font-family: 'Poppins', sans-serif; 
+    margin: 0; 
+    background-repeat: no-repeat;
+}
+
+/* COMEÇO DO CONTAINER DO CADASTRO */
+ .texto-cadastro { /*formulario de cadastro*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /*alinhamento horizontal*/
+    align-items: center; /*alinhamento vertical*/
+    margin: auto;
+    width: 90%;
+    height: 90%;
+}
+
+.containerCadastro span { 
+    width: 80%;
+    font-size: 12px;
+}
+
+.img-cadastro{ 
+    width: 90%; /* largura*/
+    border-radius: 15px 0px 0px 15px;/*borda da imagem (top right bottom left)*/
+}
+
+select {
+    color: white;
+}
+
+.form{
+    /*card da area de cadastro*/
+    margin: 50px 5% 50px 5%; /*tag unica que configura tds as margens (top right bottom left)*/
+    width: 90%;
+    border-radius: 20px;
+    height: 50%; /*o tamanho do card é suficiente para caber o conteudo*/
+    background-color: #E3DCCD;
+    border: 4px solid #767066;
+}
+
+::placeholder{
+    color: white;
+}
+
+.containerCadastro {
+    /*conteudo do formulário de cadastro */
+    display: flex;
+    justify-content: space-around; /* os itens são distribuídos igualmente no espaço disponível ao redor deles */
+}
+
+.form .containerCadastro h1{
+    /*estilizaçao do titulo*/
+    color: #767066;
+    margin-top: 0%;
+}
+
+.form .containerCadastro p{
+    /*estilização dos textos*/
+    align-self: self-start; /*alinha apenas este elemento para o inicio*/
+    margin-left: 10%;
+}
+
+.form .containerCadastro a{ 
+    /*estilização dos links*/
+   color: #ffffff;
+}
+
+.input_number{ 
+    /*estilização de TODOS os inputs dos formularios do site*/
+    width: 80%;
+    font-family: 'Poppins', sans-serif;
+    height: 30px;
+    border-style: none;
+    background-color: #767066;
+    border-radius: 5px;
+    color: #ffffff;
+} 
+
+button{
+    /*estilização do botão da página da calculadora*/
+    background-color: #767066;
+    color: #ffffff;
+    width: 170px;
+    height: 50px;
+    border-style: none; /*tira a estilização automatica do botão do html*/
+    border-radius: 10px;
+    cursor: pointer; /*muda a imagem do cursor quando passar pelo botão*/
+    margin: 10px;
+    font-size: 20px;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+}
+
+
+.botao-banner{ /* Botão de Cadastro */
+    background-color: #767066;
+    color: #ffffff;
+    width: 220px;
+    height: 50px;
+    border-style: none; /*tira a estilização automatica do botão do html*/
+    border-radius: 10px;
+    cursor: pointer; /*muda a imagem do cursor quando passar pelo botão*/
+    margin: 10px;
+    font-size: 20px;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.botao-banner2{ /* Botão da Home */
+    background-color: #767066;
+    color: #ffffff;
+    width: 220px;
+    height: 50px;
+    border-style: none; /*tira a estilização automatica do botão do html*/
+    border-radius: 10px;
+    cursor: pointer; /*muda a imagem do cursor quando passar pelo botão*/
+    margin: 10px;
+    font-size: 20px;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    display: inline-block;
+}
+
+button:hover{
+    /*'animação' do botão quando o mouse passar*/
+    box-shadow: 0 16px 32px 0 rgba(0,0,0,0.2);
+    background-color: #bbb5aa;
+    color: white;
+    transition-duration: 0.3s; /*duração da transição da animação*/
+}
+/* FIM DO CONTAINER DO CADASTRO */

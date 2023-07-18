@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FIEL ON | Página Inicial</title>
+
+    <link rel="stylesheet" href="../dashboard/cssDash/dashboards.css">
+    <script src="../js/funcoes.js"></script>
+
+    <link rel="shortcut icon" href="../assets/imgs/logo-cor-tela (2).png" type="image/x-icon">
+
+    <!-- scripts do Chart.js - 2022-1 -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!--FONT AWESOME-->
+    <script src="https://kit.fontawesome.com/9f7414eb10.js" crossorigin="anonymous"></script>
+</head>
+
+<!-- <body onload=" atualizarFeed()"> -->
+<body>
+
+    <div class="janela">
+        <div class="header-left">
+            <img class="logo" src="../assets/imgs/logo-dash.png">
+
+            <div class="hello">
+                <h3>Olá, <span id="b_usuario">usuário</span>.</h3>
+            </div>
+            <div class="frase">
+                <p>Mais um integrante para o bando de loucos!</p>
+            </div>
+
+            <div class="botoesLaterais">
+                <a href="../dashboard/quiz.html">
+                    <h3>Quiz</h3>
+                </a>
+            </div>
+
+            <div class="botoesLaterais">
+                <a href="../dashboard/lista.html">
+                    <h3>Lineup Game</h3>
+                </a>
+            </div>
+
+            <div class="botoesLaterais">
+                <a href="../dashboard/dashboard.html">
+                <h3>Dashboard</h3>
+                </a>
+            </div>
+
+            <div class="botoesLaterais">
+                <a href="../dashboard/avaliacao.html">
+                <h3>Avaliação</h3>
+                </a>
+            </div>
+
+            <div class="btn-logout" onclick="limparSessao()">
+                <img class="sair" src="../assets/imgs/sair (1).png">
+            </div>
+
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="texto-banner">
+            <h1>Bem-vindo à Área do Usuário Fiel ON!</h1>
+        
+            <p>
+
+                É com grande satisfação que lhe damos as boas-vindas ao espaço reservado aos verdadeiros torcedores do
+                Sport Club Corinthians Paulista. Aqui, você encontrará uma experiência única, com recursos interativos
+                para que você possa se envolver ainda mais com o seu time do coração.<br>
+                <br>
+                Como uma das funcionalidades dessa área temos o prazer de apresentar a você nosso Quiz Corinthiano, onde
+                você poderá testar seus conhecimentos sobre a história gloriosa do Timão, sobre jogadores icônicos,
+                títulos memoráveis e momentos históricos que fizeram parte da trajetória do clube. O Quiz Corinthiano é
+                a oportunidade perfeita para mostrar que você é um especialista no Corinthians e para aprender ainda
+                mais sobre o seu amado time.<br>
+                <br>
+                Além disso, oferecemos gráficos personalizados que disponibilizarão a você informações importantes do
+                time e apresentarão o seu desempenho no quiz ao longo do tempo. Visualize seu progresso e seu número de
+                acertos, compare sua pontuação, aprimore seus conhecimentos e se torne um verdadeiro mestre corinthiano.<br>
+                <br>
+                Estamos empenhados em criar um ambiente onde você possa se conectar com outros torcedores, compartilhar
+                sua paixão pelo Corinthians, participar de discussões animadas em fóruns exclusivos e criar laços de
+                amizade com a família corinthiana.<br>
+                <br>
+                Não perca tempo! Explore todas as funcionalidades do Fiel On, mergulhe no Quiz Corinthiano, acompanhe
+                seu progresso através dos gráficos e sinta a emoção de ser um verdadeiro fiel torcedor. Estamos aqui
+                para tornar a sua jornada como torcedor ainda mais especial e inesquecível. <br>
+                <br>
+                <h2>Vai, Corinthians!</h2>
+
+            </p>
+
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+<script>
+    b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+
+   
+</script> 

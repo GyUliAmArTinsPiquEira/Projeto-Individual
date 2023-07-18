@@ -1,0 +1,197 @@
+/*importação de fonte do google fontes com varias especuras diferentes*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+body {
+    background-color:#E3DCCD;
+    font-family: 'Poppins', sans-serif; 
+    margin: 0; 
+    background-repeat: no-repeat;
+}
+
+.container {
+    display: flex;
+    width: 80%;
+    margin: 5%; 
+    flex-direction: row;
+}
+
+/* INICIO DO HEADER*/
+.header {
+    position: absolute; 
+    top: 0; 
+    width: 100%;
+    height: 75px;
+    background-color: #E3DCCD;
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    margin-left: 0%;
+    margin-right: 0%;
+    margin-top: 0px; 
+    /* box-shadow: 0 16px 32px 0 rgba(255, 255, 255, 0.489); */
+    padding: 0%;
+}
+
+.header .container {
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    width: 200px;
+}
+
+.navbar {
+    width: 700px;
+    display: flex;
+    list-style: none; 
+    justify-content: space-between;
+}
+
+.navbar li a {
+    color: #767066;
+    text-decoration: none; 
+    font-size: 18px;
+    font-weight: 600; 
+    display: flex;
+    margin-left: 15px;
+    letter-spacing: 1px;
+}
+
+.navbar li a:hover {
+    color: #b4a39b;
+    transition: 0.5s;
+}
+/* FIM DO HEADER */
+
+/* COMEÇO DO BANNER LINHA DO TEMPO*/
+.banner {
+    margin-top: 170px;
+}
+
+.line {
+    height: 2px;
+    width: 400px;
+    background-color: #767066;
+    margin-left: 255px;
+}
+
+.banner .container {
+    display: flex;
+    align-items: flex-start;
+    justify-items: flex-start;
+    justify-content:flex-start;
+}
+
+.texto-banner {
+    color:#767066;
+    width: 100%; 
+    margin-top: 20px;
+    margin-left: 100px;
+    text-align: justify;
+}
+
+.texto-banner p {
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: justify;
+}
+
+.texto-banner h1 {
+    font-size: 40px;
+    font-family: 'Poppins', sans-serif; 
+    letter-spacing: 2px;
+    color: #767066;
+    font-weight: bold;
+    margin-bottom: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.texto-banner h1:hover {
+    color: #b4a39b;
+    transition: 2.0s;
+}
+
+.line:hover {
+    -ms-transform: scale(1.5);
+    transform: scale(1.5);
+}
+/* FIM DO BANNER LINHA DO TEMPO*/
+
+
+/* RODAPE */
+.banner6 {
+    background-color: #767066;
+    width: 100%;
+    display: flex;
+    margin:  0px 0px 0px 0px;
+    height: 380px;
+    margin-top: 0%;
+    background-repeat: no-repeat;
+    margin-right: 200px;
+    font-family: 'Poppins', sans-serif; 
+}
+
+.banner6 .texto-banner6 h1{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5px;
+    margin-left: 100px;
+    color:#E3DCCD;
+    font-family: 'Poppins', sans-serif; 
+    font-weight: bold;
+    letter-spacing: 2px;
+    font-size: 25px;
+}
+
+.banner6 .texto-banner6 h5{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+    margin-left: 100px;
+    color:#E3DCCD;
+    font-family: 'Poppins', sans-serif; 
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 0%;
+    font-weight:initial;
+    font-size: 17px;
+}
+
+
+.banner6 .texto-banner6 p{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+    margin-left: 100px;
+    color:#E3DCCD;
+    font-size: 25px;
+    font-family: 'Poppins', sans-serif; 
+    margin-bottom: 0%;
+    text-transform: uppercase;
+}
+
+.icons{
+    margin-top: 5px;
+    margin-left: 380px;
+}
+.icons img {
+    /*configuração das imagens de contato do Fale Conosco*/
+    width: 50px;
+    height: 50px;
+    margin-top: 50px;
+    margin-right: 60px;
+}

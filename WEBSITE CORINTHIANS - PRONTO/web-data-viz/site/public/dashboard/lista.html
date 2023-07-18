@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FIEL ON | Lineup Game</title>
+
+    <link rel="shortcut icon" href="../assets/imgs/logo-cor-tela (2).png" type="image/x-icon">
+    <link rel="stylesheet" href="../dashboard/cssDash/lista.css">
+
+</head>
+
+<body>
+
+    <div class="header">
+        <div class="container">
+            <img class="logo" src="../assets/imgs/logo-dash.png">
+            <ul class="navbar">
+                <li><a href="../dashboard/paginaInicial.html">Início</a></li>
+                <li><a href="../dashboard/quiz.html">Quiz</a></li>
+                <li><a href="../dashboard/dashboard.html">Dashboards</a></li>
+                <li><a href="../dashboard/avaliacao.html">Avaliação</a></li>
+                <li>
+                    <div class="logout" onclick="limparSessao()">
+                        <img class="sair" src="../assets/imgs/sair (1).png">
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- CARD DE INSTRUÇÕES DO JOGO -->
+    <div id="projeto" class="banner">
+        <div class="container">
+            <div class="texto-banner">
+                <h1>LINEUP GAME</h1>
+                <div class="line"></div>
+                <h2>Você é um verdadeiro fã do Corinthians? Mostre todo o seu conhecimento sobre o atual elenco com o
+                    jogo "Lineup Game"</h2>
+                <p>
+                    Você será desafiado a inserir os nomes dos jogadores do elenco atual, e o melhor de tudo: suas fotos
+                    vão aparecer embaixo dos nomes!<br>
+                    Portanto, o jogo consiste em você lembrar os nomes dos atuais jogadores do Corinthians e inseri-los
+                    no campo denominado como
+                    'Jogadores'.
+                    Lembre-se de inserir os nomes com a primeira letra maiúscula e, quando o jogador for conhecido pelo
+                    sobrenome, o escreva também. Essa dica é primordial
+                    para que os pontos sejam corretamente validados!<br>
+                    Você terá 50 segundos para escrever o quanto de nomes lembrar, mas não esqueça de clicar no botão de
+                    iniciar
+                    para o timer começar a contar. <br>
+                    O tempo está correndo, não perca mais tempo! Desafie seus amigos, compartilhe seu resultado e veja
+                    quem é o melhor conhecedor do elenco atual do Corinthians. É hora de entrar em campo e mostrar todo
+                    o seu apoio ao Timão!
+                </p>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- CARD DO BOTÃO INICIAR GAME -->
+    <div class="botao-div" id="botaoDiv" style="display: block;">
+        <button class="botao" onclick="iniciar()">Iniciar GAME!</button>
+    </div>
+
+    <!-- CARD GERAL -->
+    <div class="boxes">
+
+        <!-- CARD ONDE O USUÁRIO INSERE OS JOGADORES -->
+        <div class="box1" id="box1Div" style="display: none;">
+            <span class="timer" id="span_tempo"></span><br>
+            Jogadores: <input class="inputJog" id="input_jog"><br>
+            <button class="botaoRegistrar" onclick="registrar()">Registrar Jogadores</button>
+            <div id="msg"></div><!-- ONDE APARECEM AS IMAGENS INDIVIDUAIS DOS JOGADORES E OS NOMES -->
+        </div>
+
+        <!-- CARD DA GALERIA DOS ESCALADOS-->
+        <div class="box2" id="box2Div" style="display: none;">
+            <p> GALERIA DOS ESCALADOS:</p>
+            <div id="imagensJogadores"></div>
+        </div>
+
+    </div>
+</body>
+
+</html>
+<script>
+
+    var listaGostar = [];
+    var listaJogadores = [];
+    var segundo = 50;   // Define a contagem iniciando de 50.
+    var interval = null;  // Variável usada para armazenar a referência ao intervalo do temporizador.
+    span_tempo.innerHTML = segundo; // Atualiza o conteúdo do elemento para exibir o valor atual da variável "segundo".
+
+    function iniciar() {
+        interval = setInterval(() => {// Inicia um intervalo de tempo que será executado a cada 1 segundo.
+            segundo -= 1; // Diminui o valor da variável "segundo" em 1.
+            span_tempo.innerHTML = segundo;// Atualiza a div.
+
+            if (segundo <= 0) {
+                clearInterval(interval);
+                alert("O tempo acabou e você acertou " + listaJogadores.length + " jogadores de 30 participantes do elenco!");
+            }
+        }, 1000)
+
+        botaoDiv.style.display = "none";
+        box1Div.style.display = "block";
+    };
+
+    function registrar() {
+
+        box2Div.style.display = "block";
+
+        var listaEscalados = ["Carlos Miguel", "Cassio", "Matheus Donelli", "Fabio Santos", "Matheus Bidu", "Rafael Ramos", "Fagner", "Balbuena",
+            "Bruno Mendez", "Caetano", "Gil", "Murillo", "Cantillo", "Du Queiroz", "Fausto Vera", "Maycon", "Paulinho", "Roni",
+            "Adson", "Giuliano", "Matheus Araújo", "Renato Augusto", "Chrystian", "Gustavo Mosquito", "Junior Moraes", "Pedro",
+            "Romero", "Roger Guedes", "Yuri Alberto", "Ruan Oliveira"];
+
+        var listaImagem = ['<img style="height: 100px;" src="../assets/imgs/carlos-miguel.jpg">',
+            '<img style="height: 100px;" src="../assets/imgs/cassio-ramos.jpg">',
+            '<img style="height: 100px;" src="../assets/imgs/matheus-donelli.jpg">',
+            '<img style="height: 100px;" src="../assets/imgs/fabio-santos.jpg">',
+            '<img style="height: 100px;" src="../assets/imgs/matheus-bidu.jpg">',
+            '<img style="height: 100px;" src="../assets/imgs/rafael-ramos.jpg">',
+            '<img style="height: 100px;" src="../assets/imgs/fagner-lemos.jpg">',
+            '<img style="height: 100px;" src="../assets/imgs/balbuena.jpg">',
+            '<img style="height: 100px;" src="../assets/imgs/bruno-mendez.jpg">',
+            '<img style="height: 100px;" src="../assets/imgs/caetano.jpg">',
+            '<img style="height: 100px;" src="../assets/imgs/gil.jpg">',
+            '<img style="height: 100px;" src="../assets/imgs/murillo.jpg">',
+            '<img style="height: 100px;" src="../assets/imgs/cantillo.jpg"> ',
+            '<img style="height: 100px;" src="../assets/imgs/du-queiroz.jpg">',
+            '<img style="height: 100px;" src="../assets/imgs/fausto-vera.jpg">',
+            '<img style="height: 100px;" src="../assets/imgs/maycon.jpg">',
+            '<img style="height: 100px;" src="../assets/imgs/paulinho.jpg">',
+            '<img style="height: 100px;" src="../assets/imgs/roni.jpg">',
+            '<img style="height: 100px;" src="../assets/imgs/adson.jpg">',
+            '<img style="height: 100px;" src="../assets/imgs/giuliano.jpg">',
+            '<img style="height: 100px;" src="../assets/imgs/matheus-de-araujo.jpg"> ',
+            '<img style="height: 100px;" src="../assets/imgs/renato-augusto.jpg">',
+            '<img style="height: 100px;" src="../assets/imgs/chrystian-amaral-barletta.jpg">',
+            '<img style="height: 100px;" src="../assets/imgs/gustavo-henric-da-silva.jpg">',
+            '<img style="height: 100px;" src="../assets/imgs/moraes-junior.jpg">',
+            '<img style="height: 100px;" src="../assets/imgs/pedro.jpg">',
+            '<img style="height: 100px;" src="../assets/imgs/angel-rodrigo-romero.jpg">',
+            '<img style="height: 100px;" src="../assets/imgs/roger-krug-guedes.jpg">',
+            '<img style="height: 100px;" src="../assets/imgs/yuri.jpg"> ',
+            '<img style="height: 100px;" src="../assets/imgs/ruan-de-oliveira-.jpg">'
+        ];
+
+
+        var jogadorRegistrado = input_jog.value; //Pega a informação inserida pelo usuário e guarda na variável.
+        var jogadorIndex = listaEscalados.indexOf(jogadorRegistrado); // Encontra o índice do jogador registrado (da input) na listaEscalados.
+        var imagemJogador = listaImagem[jogadorIndex]; // Atribui a imagem correspondente ao jogador registrado (da input) usando o jogadorIndex para acessar a listaImagem na posição correspondente.
+
+        if (listaJogadores.indexOf(jogadorRegistrado) > -1) { // Verifica se o jogador já foi inserido na lista de jogadores registrados 
+            alert("O jogador já foi inserido!");
+        }
+
+        else if (listaEscalados.includes(jogadorRegistrado)) { // Verifica se o jogador registrado está na lista de jogadores escalados. 
+            msg.innerHTML = `<br> O jogador ${jogadorRegistrado} está entre os escalados!<br>`; //true
+            listaJogadores.push(jogadorRegistrado); // Adiciona o nome registrado na lista vazia criada fora da função.
+            msg.innerHTML += `<br>${imagemJogador}<br>
+            <br>`; // Exibe a imagem correspondente ao jogador inserido na input.
+        }
+
+        else { //false
+            msg.innerHTML = `<br> O jogador ${jogadorRegistrado} não faz parte do elenco, tente novamente...<br>`;
+        }
+
+        for (var contador = 0; contador < listaJogadores.length; contador++) {
+            msg.innerHTML += `${listaJogadores[contador]}, `;
+        } // Percorre a lista de jogadores registrados (listaJogadores) e adiciona os nomes deles à variável msg para exibição.
+
+        var imagensJogadoresDiv = document.getElementById('imagensJogadores'); // A variável é criada para exibir a galeria de escalados e pega as informações com base no id da div.
+        imagensJogadoresDiv.innerHTML = '';
+
+        for (var i = 0; i < listaJogadores.length; i++) {
+            var jogador = listaJogadores[i]; //Pega o elemento da lista na posição do contador.
+            var jogadorIndex = listaEscalados.indexOf(jogador); //Encontra o índice do jogador atual na lista de jogadores escalados (lista já existente).
+            var imagemJogador = listaImagem[jogadorIndex]; // Acessa lista de imagens na posição do jogador.
+            imagensJogadoresDiv.innerHTML += `${imagemJogador} `;
+        }
+    }
+</script>

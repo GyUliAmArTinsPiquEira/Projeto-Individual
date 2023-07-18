@@ -1,0 +1,330 @@
+/*importação de fonte do google fontes com varias especuras diferentes*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+body {
+    background-color:#E3DCCD;
+    font-family: 'Poppins', sans-serif; 
+    margin: 0; 
+    background-repeat: no-repeat;
+}
+
+.container {
+    display: flex;
+    width: 80%;
+    margin: 5%; 
+    flex-direction: row;
+    height: 250px;
+}
+
+/* INICIO DO HEADER */
+.header {
+    position: absolute; 
+    top: 0; 
+    width: 100%;
+    height: 75px;
+    background-color: #E3DCCD;
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    margin-left: 0%;
+    margin-right: 0%;
+    margin-top: 0px; 
+    padding: 0%;
+}
+
+.header .container {
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    width: 200px;
+}
+
+.navbar {/* Lista de links */
+    width: 700px;
+    display: flex;
+    list-style: none; 
+    justify-content: space-between;
+}
+
+.navbar li a {
+    color: #767066;
+    text-decoration: none; 
+    font-size: 18px;
+    font-weight: 600; 
+    display: flex;
+    margin-left: 15px;
+    letter-spacing: 1px;
+}
+
+.navbar li a:hover {
+    color: #b4a39b;
+    transition: 0.5s;
+}
+
+.logout {/* Imagem que representa o logout */
+    border-style: none; 
+    border-radius: 10px;
+    cursor: pointer; 
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2% 5%;
+}
+/* FIM DO HEADER */
+
+
+
+/* BANNER EXPLICAÇÃO SOBRE A IMPORTÂNCIA DA PESQUISA DE SATISFAÇÃO*/
+.banner {
+    margin-top: 170px;
+    margin-bottom: 0%;
+}
+
+.line {
+    height: 2px;
+    width: 680px;
+    background-color: #767066;
+    margin-left: 120px;
+}
+
+.banner .container {
+    display: flex;
+    align-items: flex-start;
+    justify-items: flex-start;
+    justify-content:flex-start;
+}
+
+.texto-banner {
+    color:#767066;
+    width: 100%; 
+    margin-top: 20px;
+    margin-left: 100px;
+}
+
+.texto-banner p {
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: justify;
+    margin-bottom: 0%;
+}
+
+.texto-banner h1 {
+    font-size: 40px;
+    font-family: 'Poppins', sans-serif; 
+    letter-spacing: 2px;
+    color: #767066;
+    font-weight: bold;
+    margin-bottom: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.texto-banner h1:hover {
+    color: #b4a39b;
+    transition: 2.0s;
+}
+
+.line:hover {
+    -ms-transform: scale(1.5);
+    transform: scale(1.5);
+}
+
+.texto-banner h2 {
+    font-size: 25px;
+    font-family: 'Poppins', sans-serif; 
+    letter-spacing: 2px;
+    color: #767066;
+    font-weight: bold;
+    margin-bottom: 2px;
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    text-align: start;
+    margin-left: 0%;
+}
+/* FIM DO BANNER DE EXPLICAÇÃO */
+
+
+/* BANNER DA AVALIAÇÃO */
+.banner1{
+    width: 100%;
+    height: 530px;
+    margin-top: 10px;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-color: #767066; 
+}
+
+.container1{
+    margin-top: 20%;
+    margin-bottom: 5%;
+}
+
+.container1 h2{
+    font-family: 'Poppins', sans-serif; 
+    color:#E3DCCD;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0%;
+    padding: 5%;
+    margin-left: -3%;
+    font-size: 26px;
+}
+
+
+.botaoAV{ /* Botão para enviar comentário */
+    background-color: #E3DCCD;
+    color: #767066;
+    width: 100px;
+    height: 30px;
+    border-style: none; /*tira a estilização automatica do botão do html*/
+    border-radius: 16px;
+    cursor: pointer; 
+    font-size: 20px;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    display:flex;
+    margin-top: 2%;
+    align-items: center;
+    justify-content: center;
+    margin-left: 47%;
+    font-size: 15px;
+}
+
+button:hover{
+    /*'animação' do botão quando o mouse passar*/
+    box-shadow: 0 16px 32px 0 rgba(0,0,0,0.2);
+    background-color: #bbb5aa;
+    color: white;
+    transition-duration: 0.3s; /*duração da transição da animação*/
+}
+
+ .selects{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 34%;
+    background-color: #E3DCCD;
+    height: 50px;
+    width: 400px;
+    border-radius: 300px 100px 300px 100px;
+    text-align: center;
+    border-width: 2px;
+    cursor: pointer;
+    color: #767066;
+    font-weight: bold;
+    font-size: 20px;
+}
+ 
+.caixa h4{ /* Frase "Deixe um comentário" */
+    color: #E3DCCD;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+}
+
+.caixa_texto{ /* Input para escrever comentário */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 31%; 
+    width: 500px;
+    height: 100px;
+    border-radius: 300px 100px 300px 100px;
+    color:#767066;
+    background-color: #E3DCCD;
+}
+/* FIM DO BANNER DE AVALIAÇÃO */
+
+
+/* RODAPE */
+.banner6 {
+    background-color: #E3DCCD;
+    width: 100%;
+    display: flex;
+    margin:  0px 0px 0px 0px;
+    height: 380px;
+    margin-top: 0%;
+    background-repeat: no-repeat;
+    margin-right: 200px;
+    font-family: 'Poppins', sans-serif; 
+}
+
+.banner6 .texto-banner6 h1{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5px;
+    margin-left: 150px;
+    color:#767066;
+    font-family: 'Poppins', sans-serif; 
+    font-weight: bold;
+    letter-spacing: 2px;
+    font-size: 25px;
+}
+
+.banner6 .texto-banner6 h5{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+    margin-left: 155px;
+    color:#767066;
+    font-family: 'Poppins', sans-serif; 
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 0%;
+    font-weight:initial;
+    font-size: 17px;
+}
+
+
+.banner6 .texto-banner6 p{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+    margin-left: 150px;
+    color:#767066;
+    font-size: 25px;
+    font-family: 'Poppins', sans-serif; 
+    margin-bottom: 0%;
+    text-transform: uppercase;
+}
+
+.icons{
+    margin-top: 5px;
+    margin-left: 380px;
+}
+
+.icons img {
+    width: 50px;
+    height: 50px;
+    margin-top: 50px;
+    margin-right: 60px;
+}
+/* FIM DO RODAPÉ */
+
+
+ 
+
+
+
+
+

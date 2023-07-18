@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FIEL ON | Pesquisa de Satisfação</title>
+
+    <link rel="shortcut icon" href="../assets/imgs/logo-cor-tela (2).png" type="image/x-icon">
+    <link rel="stylesheet" href="../dashboard/cssDash/avaliacao.css">
+    <script src="../js/funcoes.js"></script>
+
+</head>
+
+<body>
+
+    <div class="header">
+        <div class="container">
+            <img class="logo" src="../assets/imgs/logo-dash.png">
+            <ul class="navbar">
+                <li><a href="../dashboard/paginaInicial.html">Início</a></li>
+                <li><a href="../dashboard/dashboard.html">Dashboards</a></li>
+                <li><a href="../dashboard/quiz.html">Quiz</a></li>
+                <li><a href="../dashboard/lista.html">Lineup Game</a></li>
+                <li>
+                    <div class="logout" onclick="limparSessao()">
+                        <img class="sair" src="../assets/imgs/sair (1).png">
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="projeto" class="banner">
+
+        <div class="container">
+            <div class="texto-banner">
+                <h1>Pesquisa de Satisfação</h1>
+                <div class="line"></div>
+                <h2>Caro(a) usuário(a), </h2>
+                <p>
+                    Você já parou para pensar na importância da sua opinião? Ela tem um poder imenso e pode
+                    fazer toda a diferença! Hoje, venho te convidar a participar da nossa pesquisa de satisfação do
+                    site FIEL ON, pois acredito que sua opinião é fundamental para que eu aprimore as funcionalidades e
+                    proporcione uma experiência ainda melhor para você.<br>
+                    Não deixe essa oportunidade passar! Sua participação é crucial para o desenvolvimento contínuo do
+                    meu aprendizado. Conto com você para me ajudar a crescer, me desevolver profissionalmente e
+                    aperfeiçoar os serviços
+                    oferecidos.
+
+                </p>
+
+            </div>
+        </div>
+    </div>
+
+        <div class="banner1" id="bannerAv" >
+
+            <div class="container1">
+
+                <h2>
+                    Classifique a qualidade do conteúdo, o visual e as funcionalidades fornecidas no site:
+                </h2>
+
+                <div id="selects">
+                    <select class="selects " name="selects" id="input_avaliacao">
+                        <option value="MuitoBom">Muito bom </option>
+                        <option value="Bom">Bom</option>
+                        <option value="Ruim">Ruim</option>
+                        <option value="MuitoRuim">MuitoRuim</option>
+                    </select>
+                </div>
+            </div>
+            <div id="div_msg" class="caixa">
+                <h4>Deixe um comentário:</h4>
+            </div>
+            <input id="input_msg" name="msg" class="caixa_texto"> <button class="botaoAV" onclick="enviarAv()"> Enviar
+            </button>
+            <br>
+        </div>
+    </div>
+
+
+    <div class="banner6">
+        <div class="container">
+            <div class="texto-banner6">
+                <p>Espero que tenha gostado da experiência.</p>
+                <h5>GYULIA.PIQUEIRA@SPTECH.SCHOOL </h5>
+                <div class="icons">
+                    <a href="https://www.linkedin.com/in/gyulia-piqueira-b5a23a25b/"><img
+                            src="../assets/imgs/linkedin.png" alt="Linkedin"></a>
+                    <a href="https://github.com/GyUliAmArTinsPiquEira"><img src="../assets/imgs/github.png"
+                            alt="GitHub"></a>
+                    <a href="https://www.instagram.com/gyuliapiqueira/"><img src="../assets/imgs/instagram.png"
+                            alt="Instagram"></a>
+                    <a href="https://www.whatsapp.com"><img src="../assets/imgs/whatsapp.png" alt="WhatsApp"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    function enviarAv() {
+        // aguardar();
+
+        //Recupere o valor da nova input pelo nome do id
+        // Agora vá para o método fetch logo abaixo
+        var avaliacaoVar = input_avaliacao.value;
+        var comentarioVar = input_msg.value;
+
+
+        if (avaliacaoVar == "" || comentarioVar == "") {
+            // cardErro.style.display = "block"
+            alert("ERRO- Por favor verifique se você preencheu os campos necessários");
+
+            // finalizarAguardar();
+            return false;
+        }
+        // else {
+        //     setInterval(sumirMensagem, 5000)
+        // }
+
+        // Enviando o valor da nova input
+        fetch("/usuarios/enviarAv", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
+                avaliacaoServer: avaliacaoVar,
+                comentarioServer: comentarioVar,
+                fkUsuarioAServer: sessionStorage.getItem('ID_USUARIO')
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                // cardErro.style.display = "block";
+
+                alert("Respostas enviadas com sucesso, obrigada pela avaliação! Redirecionando para tela de Início...");
+
+                setTimeout(() => {
+                    window.location = "paginaInicial.html";
+                }, "2000")
+
+                limparFormulario();
+                // finalizarAguardar();
+            }         
+            else {
+                throw ("Houve um erro ao tentar realizar o envio das respostas...");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+            // finalizarAguardar();
+        });
+
+        return false;
+    }
+
+    // function sumirMensagem() {
+    //     cardErro.style.display = "none"
+    // }
+    function limparFormulario() {
+        comentarioVar = "";
+
+    }
+ 
+
+</script>

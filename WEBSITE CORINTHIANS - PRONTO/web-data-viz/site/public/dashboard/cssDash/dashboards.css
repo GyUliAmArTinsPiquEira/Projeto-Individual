@@ -1,0 +1,323 @@
+/* pagina mural */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #E3DCCD;
+  background-repeat: no-repeat;
+}
+
+/* INICIO DO HEADER */
+.header {
+  position: absolute; 
+  top: 0; 
+  width: 100%;
+  height: 75px;
+  background-color: #E3DCCD;
+  display: flex; 
+  align-items: center; 
+  justify-content: center;
+  margin-left: 0%;
+  margin-right: 0%;
+  margin-top: 0px; 
+  padding: 0%;
+  position:absolute;
+}
+
+.header .container {
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.logo {
+  width: 200px;
+}
+
+.navbar {
+  width: 700px;
+  display: flex;
+  list-style: none; 
+  justify-content:space-around;
+}
+
+.navbar li a {
+  color: #767066;
+  text-decoration: none; 
+  font-size: 18px;
+  font-weight: 600; 
+  display: flex;
+  margin-left: 15px;
+  letter-spacing: 1px;
+  
+}
+
+.navbar li a:hover {
+  color: #b4a39b;
+  transition: 0.5s;
+  -ms-transform: scale(1.2);
+  transform: scale(1.2);
+}
+/* FIM DO HEADER */
+
+
+/* INICIO DA PÁGINA DE PLOTAGEM DE GRÁFICOS */
+.graph {
+  width: 70%;
+  margin: auto;
+  padding-top: 10px;
+  margin-right: 30%;
+  padding-right: 10px;
+  position:relative;
+}
+
+
+.linhaMaior { /* LINHA NA QUAL EXISTE A PLOTAGEM DE DOIS GRÁFICOS DINÂMICOS */
+  display: flex;
+  flex-direction: row;
+  width: 880px;
+  margin-left: 10%;
+  margin-top: -30%;
+  margin-bottom: 10%;
+}
+
+
+.titulos{/* LINHA NA QUAL EXISTEM DOIS TÍTULOS */
+  display: flex;
+  flex-direction: row;
+  margin-left: 10%;
+  width: 100%;
+}
+
+.title_sub1 h3{/* ÚLTIMA TENTATIVA */
+  margin-left: 3%;
+  width: 100%;
+  color: #767066;
+}
+
+.title_sub2 h3{/* TODAS AS TENTATIVAS */
+  margin-left: 114%;
+  width: 100%;
+  color: #767066;
+}
+
+.title_sub3 h3{
+  margin-left: 10%;
+  width: 100%;
+  color: #767066;
+}
+
+.graph h1{/* SEUS RESULTADOS E RECORDES DO CORINTHIANS (TÍTULOS) */
+  font-family: 'Poppins', sans-serif; 
+  letter-spacing: 2px;
+  color: #767066;
+  font-weight: bold;
+  margin-left: 10%;
+}
+
+.linha1 { /* GRÁFICO DA ÚLTIMA TENTATIVA */
+  display: flex;
+  flex-direction: row;
+  width:380px;
+  padding: 20px;
+  margin-top: 20.5%;
+  height:370px;
+  margin-right: -30%;
+  margin-left: 1%;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.linha2 { /* GRÁFICO DE TODAS AS TENTATIVAS */ 
+  display: flex;
+  flex-direction: row;
+  width:700px;
+  padding: 20px;
+  margin-top: 21%;
+  height:fit-content;
+  margin-right: -40%;
+  margin-left: 30%;
+  box-sizing: border-box;
+}
+
+.linha3 { /* TREINADORES COM MAIS JOGOS */
+  display: flex;
+  flex-direction: row;
+  padding: 20px;
+  width:740px;
+  margin-left: 7%;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.linha4 { /* JOGADORES QUE MAIS ATUARAM COM A CAMISA */
+  display: flex;
+  flex-direction: row;
+  padding: 20px;
+  width:740px;
+  margin-left: 7%;
+  box-sizing: border-box;
+  position: relative;
+}
+.linha5 { /* JOGADORES COM MAIS GOLS */
+  display: flex;
+  flex-direction: row;
+  padding: 20px;
+  width:740px;
+  margin-left: 7%;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.linha6 { /* OS MAIORES GARÇONS DO CORINTHIANS */
+  display: flex;
+  flex-direction: row;
+  padding: 20px;
+  margin-left: 5%;
+  width: 740px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.linha7{ /* OS MAIORES CAMPEÕES PELO CORINTHIANS*/
+  display: flex;
+  flex-direction: row;
+  padding: 20px;
+  margin-left: 5%;
+  width: 740px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
+/* FIM DA PÁGINA DE PLOTAGEM DE GRÁFICOS */
+
+
+/* COMEÇO DA NAV BAR LATERAL */
+.janela {
+  display: flex;
+  width: 35vw;
+}
+
+.header-left a {
+  text-decoration: none;
+  color: white;
+}
+
+.header-left {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  height: 100vh;
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  border-right: 4px dotted #767066;
+  background-color: #E3DCCD;
+}
+
+.logo {
+  width: 200px;
+}
+
+.hello {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.hello h3 {
+  color: #767066;
+  font-weight: 300;
+  font-size: 20px;
+}
+
+.hello h3 span {
+  font-weight: 800;
+}
+
+.frase p{
+  color: #767066;
+  font-weight: 300;
+  font-size: 16px;
+}
+/* FIM DA NAV BAR LATERAL */
+
+
+/* COMEÇO DA ESTILIZAÇÃO DOS BOTÕES LATERAIS (Inicio, Quiz, LineUp, Avaliação e Dashboards) */
+.botoesLaterais { 
+  background-color: #767066 ;
+  width: 50%;
+  height: 25px;
+  border-style: none; 
+  border-radius: 100px 300px 100px 300px;
+  cursor:pointer; /*muda a imagem do cursor quando passar pelo botão*/
+  font-size: 17px;
+  font-family: 'Poppins', sans-serif;
+  text-decoration: none;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2% 5%;
+
+}
+
+.botoesLaterais:hover{
+  /*'animação' do botão quando o mouse passar*/
+  box-shadow: 0 16px 32px 0 rgba(0,0,0,0.2);
+  background-color: #bbb5aa;
+  color: white;
+  transition-duration: 0.3s; /*duração da transição da animação*/
+}
+
+.botoesLaterais h3{ 
+  color: #f0efee;
+  text-decoration: none;
+  font-weight: normal;
+}
+
+.botoesLaterais h3,
+.botoesLaterais h3 {
+  margin: 0;
+  padding: 0;
+}
+
+.btn-logout { /* Botão/ Imagem de saída do usuário*/
+  cursor: pointer; /*muda a imagem do cursor quando passar pelo botão*/
+}
+
+/* FIM DA ESTILIZAÇÃO DOS BOTÕES LATERAIS */
+
+
+
+/* COMEÇO DO TEXTO DE BEM-VINDO À ÁREA DO USUÁRIO */
+.texto-banner {
+  color:#767066;
+  width: 60%; 
+  margin-top: 20px;
+  margin-left: 35%;
+}
+.texto-banner p {
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: justify;
+  margin-top: 5%;
+}
+.texto-banner h1 {
+  font-size: 40px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: start;
+  justify-content: start;
+  width: 100%;
+}
+/* FIM DO TEXTO DE BEM-VINDO À ÁREA DO USUÁRIO */
+
+

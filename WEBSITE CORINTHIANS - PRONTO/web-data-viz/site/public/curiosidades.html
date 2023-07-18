@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FIEL ON | Sobre o Clube</title>
+
+    <script src="./js/funcoes.js"></script>
+    <link rel="shortcut icon" href="assets/imgs/logo-cor-tela (2).png" type="image/x-icon">
+    <link rel="stylesheet" href="./css/curiosidades.css">
+
+
+</head>
+
+<body>
+    <div class="header">
+        <div class="container">
+            <img class="logo" src="assets/imgs/logo.png">
+            <ul class="navbar">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="clube.html">Clube</a></li>
+                <li><a href="sobreMim.html">Sobre</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="cadastro.html">Cadastro</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="projeto" class="container">
+        <div class="texto-banner">
+            <h1>CURIOSIDADES</h1>
+            <div class="line"></div>
+            <div class="boxes">
+                <div class="box1">
+                    <div class="msg" id="msg"><br></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="banner6">
+        <div class="container">
+            <div class="texto-banner6">
+                <h1>DIGA UM OI PARA MIM!</h1>
+                <p>Se cadastre e venha testar seus conhecimentos sobre o clube.</p>
+                <h5> OI GYULIA.PIQUEIRA@SPTECH.SCHOOL </h5>
+                <!-- <button class="botao-banner6"><a href="projeto">Conhecer Projeto</a></button> -->
+                <div class="icons"> <!--Área de contatos-->
+                    <a href="https://www.linkedin.com/in/gyulia-piqueira-b5a23a25b/"><img
+                            src="assets/imgs/linkedin.branco.png" alt="Linkedin"></a>
+                    <a href="https://github.com/GyUliAmArTinsPiquEira"><img src="assets/imgs/github.branco.png"
+                            alt="GitHub"></a>
+                    <a href="https://www.instagram.com/gyuliapiqueira/"><img src="assets/imgs/instagram.branco.png"
+                            alt="Instagram"></a>
+                    <a href="https://www.whatsapp.com"><img src="assets/imgs/whatsapp.branco.png" alt="WhatsApp"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        var curiosidades = [
+            [`
+        O Corinthians foi batizado em homenagem ao Corinthian FC, time inglês que havia excursionado pelo Brasil. 
+        O nome não agradou a todos. Havia quem preferisse que o nome do clube homenageasse algum brasileiro de 
+        renome como Santos Dumont ou Carlos Gomes.
+        <div class="botoes">
+            <button class="botao" onclick="ver()">Próximo >></button>
+            </div>`
+            ],
+            [`
+            O Corinthians foi fundado por um grupo de trabalhadores humildes. O primeiro presidente, por exemplo, 
+            era alfaiate. Os próprios jogadores ajudaram a construir o campo onde a equipe faria seus amistosos.
+            <div class="botoes">
+            <button class="botao" onclick="voltar()"> << Voltar</button>
+            <button class="botao" onclick="ver()">Próximo >></button>
+            </div>`
+            ],
+            [`
+            O mascote do clube, o Mosqueteiro, surgiu de uma crônica do jornal A Gazeta Esportiva após um amistoso contra o Barracas, 
+            da Argentina. O texto comparava a garra dos jogadores corintianos com Os Três Mosqueteiros de Alexandre Dumas.
+            <div class="botoes">
+            <button class="botao" onclick="voltar()"> << Voltar</button>
+            <button class="botao" onclick="ver()">Próximo >></button>
+            </div>`
+            ],
+            [`
+            O Corinthians viveu por quatro anos sem ter um escudo. O primeiro foi desenhado apenas em 1914.
+            <div class="botoes">
+            <button class="botao" onclick="voltar()"> << Voltar</button>
+            <button class="botao" onclick="ver()">Próximo >></button>
+            </div>`
+            ],
+            [`
+            Os primeiros uniformes do Corinthians eram na cor creme. A tonalidade, no entanto, desbotava fácil após as lavagens
+            , e como não havia dinheiro para repor o tecido, optou-se por adotar o branco como cor oficial.
+            <div class="botoes">
+            <button class="botao" onclick="voltar()"> << Voltar</button>
+            <button class="botao" onclick="ver()">Próximo >></button>
+            </div>`
+            ],
+            [`
+            O primeiro ídolo do Corinthians foi Neco. Ele jogou nas décadas de 1910 e 1920 e ficou marcado pelo temperamento forte. Certa vez,
+             em um clássico contra o Palestra Itália, ele tirou a cinta de seu calção para agredir o goleiro alviverde.
+             <div class="botoes">
+            <button class="botao" onclick="voltar()"> << Voltar</button>
+            <button class="botao" onclick="ver()">Próximo >></button>
+            </div>`
+            ], [`
+            O verso “Campeão dos campeões” no hino do Corinthians faz uma referência a uma conquista de 1930, quando foi realizado um jogo entre o 
+            campeão de São Paulo (o Corinthians) e o campeão do Rio de Janeiro (o Vasco): deu Timão, 3 x 2.
+            <div class="botoes">
+            <button class="botao" onclick="voltar()"> << Voltar</button>
+            <button class="botao" onclick="ver()">Próximo >></button>
+            </div>`
+            ], [`
+            Certa vez, Neco assaltou a sede do Corinthians e levou para casa bolas, troféus e outros pertences. É que por conta de dívidas o time corria o risco de
+            ter seus bens penhorados. O assalto, então, foi uma forma de guardar tudo em segurança.
+            <div class="botoes">
+            <button class="botao" onclick="voltar()"> << Voltar</button>
+            <button class="botao" onclick="ver()">Próximo >></button>
+            </div>`
+            ], [`
+            O Corinthians cedeu quatro técnicos para a Seleção Brasileira nos últimos 20 anos: Vanderlei Luxemburgo, em 1998; Carlos Alberto Parreira, em 2002; Mano Menezes, em 2010; e Tite, em 2016. 
+            Curiosamente, os quatro foram substituídos por treinadores que fracassaram e passaram pouco tempo no cargo (Evaristo de Macedo, Geninho, Adilson Batista e Cristóvão Borges, respectivamente).
+            <div class="botoes">
+            <button class="botao" onclick="voltar()"> << Voltar</button>
+            <button class="botao" onclick="ver()">Próximo >></button>
+            </div>`
+            ],
+            [`
+            O Corinthians foi o primeiro campeão da Copa do Mundo de Clubes da Fifa. Em 2000, jogando na condição de campeão nacional do país-sede, o Timão derrotou o 
+            Vasco no Maracanã nos pênaltis e levou o título.
+            <div class="botoes">
+            <button class="botao" onclick="voltar()"> << Voltar</button>
+            <button class="botao" onclick="ver()">Próximo >></button>
+            </div>
+    `
+            ],
+            [`
+            Quando o Corinthians ganhou seu primeiro título brasileiro, em 1990, outros 19 times já tinham conquistado esse título. Vinte e sete anos depois, o Timão já se tornou o terceiro maior campeão nacional, com sete títulos.
+            <div class="botoes">
+            <button class="botao" onclick="voltar()"> << Voltar</button>
+            <button class="botao" onclick="ver()">Próximo >></button>
+            </div>
+    `
+            ],
+            [`
+            O Corinthians foi o primeiro campeão da Copa do Mundo de Clubes da Fifa. Em 2000, jogando na condição de campeão nacional do país-sede, o Timão derrotou o 
+            Vasco no Maracanã nos pênaltis e levou o título.
+            <div class="botoes">
+            <button class="botao" onclick="voltar()"> << Voltar</button>
+            <button class="botao" onclick="ver()">Próximo >></button>
+            </div>
+
+    `
+            ],
+            [`
+            O Corinthians foi o primeiro campeão da Copa do Mundo de Clubes da Fifa. Em 2000, jogando na condição de campeão nacional do país-sede, o Timão derrotou o 
+            Vasco no Maracanã nos pênaltis e levou o título.
+            <div class="botoes">
+            <button class="botao" onclick="voltar()"> << Voltar</button>
+            </div>
+    `
+            ]
+        ];
+
+
+        var contador = 0;
+        var listaCuriosidades = [];
+        msg.innerHTML = curiosidades[contador]; // Atualiza a div com as curiosidades do vetor e exibe a curiosidade correspondente à posição atual indicada pelo valor do contador.
+
+
+        function ver() {
+            contador++ // Avança para a próxima curiosidade quando a função é chamada novamente (de um em um).
+            if (contador < curiosidades.length) {
+                msg.innerHTML = curiosidades[contador];
+            }
+        }
+
+        function voltar() {
+            if (contador < curiosidades.length) {
+                msg.innerHTML = curiosidades[contador - 1];
+            } // Atualiza a div com as curiosidades do vetor e exibe a curiosidade correspondente à posição atual - 1 para que ela seja indicada de acordo com o valor do contador anterior.
+            contador-- // Volta para a curiosidade anterior quando a função é chamada novamente (de um em um).
+    
+        }
+    </script>
